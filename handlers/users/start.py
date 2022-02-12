@@ -5,7 +5,7 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 
 from data.config import ADMINS
 from loader import dp, db, bot
-
+from keyboards import ss,menu 
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
@@ -22,3 +22,4 @@ async def bot_start(message: types.Message):
 
     except sqlite3.IntegrityError as err:
         await bot.send_message(chat_id=ADMINS[0], text=f"{name} bazaga oldin qo'shilgan")
+
